@@ -136,7 +136,7 @@ def load_and_train():
             'R2'  : round(r2_score(y_test,yp),4),
         }
 
-    best_model = models['HistGradient Boosting']
+    best_model = models['Gradient Boosting']
 
     # Prediksi 2026
     last_vol    = df_clean.groupby(['segmen','hari'])['volume_lalu_lintas'].last().reset_index()
@@ -184,7 +184,7 @@ with st.sidebar:
     st.markdown(f"""
     <div style='font-size:11px;color:#aaa;padding:0 4px;'>
         <b style='color:#ccc;'>Info Model</b><br>
-        🤖 HistGradientBoosting<br>
+        🤖 GradientBoosting<br>
         📐 R² = {best_r2}<br>
         📉 MAE = {best_mae} SMP/Jam<br>
         📅 Data: 2015 – 2025<br>
@@ -196,7 +196,7 @@ with st.sidebar:
 st.markdown(f"""
 <div class="main-header">
     <h1>🚦 Prediksi Volume Lalu Lintas Kota Bogor</h1>
-    <p>Machine Learning · HistGradientBoosting · R² = {best_r2} · Data 2015–2025</p>
+    <p>Machine Learning · Gradient Boosting · R² = {best_r2} · Data 2015–2025</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -442,5 +442,5 @@ elif "Historis" in menu:
 # ── Footer ───────────────────────────────────────────────────
 st.markdown("""
 <div style="text-align:center;padding:24px 0 8px;color:#aaa;font-size:12px;">
-    🚦 <b>Sistem Prediksi Volume Lalu Lintas Kota Bogor</b> · HistGradientBoosting · Data BPS 2015–2025
+    🚦 <b>Sistem Prediksi Volume Lalu Lintas Kota Bogor</b> · Gradient Boosting · Data BPS 2015–2025
 </div>""", unsafe_allow_html=True)
